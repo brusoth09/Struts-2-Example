@@ -1,9 +1,11 @@
 package com.atuts.struts.action;
 
-
 import com.opensymphony.xwork2.ActionSupport;
 
-public class WelcomeUserAction extends ActionSupport{
+/**
+ *
+ */
+public class LoginAction extends ActionSupport{
     private String username;
     private String password;
 
@@ -30,8 +32,10 @@ public class WelcomeUserAction extends ActionSupport{
 
     @Override
     public void validate(){
-        if("".equals(getUsername())){
-            addFieldError("username", getText("username.required"));
+        if("mkyong".equals(getUsername())){
+            addActionMessage("You are valid user!");
+        }else{
+            addActionError("I don't know you, dont try to hack me!");
         }
     }
 }

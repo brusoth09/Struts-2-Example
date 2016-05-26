@@ -7,8 +7,8 @@
     <body>
         <h1>Struts 2 Hello World Example</h1>
         <s:form action="Welcome">
-            <s:textfield name="username" label="Username"/>
-            <s:password name="password" label="Password"/>
+            <s:textfield name="username" label="Username"/><s:fielderror fieldName="username"/>
+            <s:password name="password" label="Password"/><s:fielderror fieldName="password"/>
             <s:submit />
         </s:form>
     </body>

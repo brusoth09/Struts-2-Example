@@ -14,6 +14,24 @@
                 <param name="namespace">/Common</param>
             </result>
             <result name="WARN">pages/error.jsp</result>
+            <result name="input">pages/login.jsp</result>
+        </action>
+        <action name="signin">
+            <result>pages/signin.jsp</result>
+        </action>
+        <action name="validateUser" class="com.atuts.struts.action.LoginAction">
+            <result name="SUCCESS">pages/welcome_user.jsp</result>
+            <result name="input">pages/signin.jsp</result>
+        </action>
+        <action name="addCustomerAction"
+                class="com.atuts.struts.action.CustomerAction" >
+            <result name="success">pages/addCustomer.jsp</result>
+        </action>
+
+        <action name="customerAction"
+                class="com.atuts.struts.action.CustomerAction" >
+            <result name="success">pages/success.jsp</result>
         </action>
     </package>
+
 </struts>
