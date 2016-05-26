@@ -4,6 +4,16 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
     <package name="user" namespace="/User" extends="struts-default">
+        <interceptors>
+            <interceptor name="printMsgInterceptor"
+                         class="com.atuts.struts.interceptors.PrintMsgInterceptors"></interceptor>
+
+            <interceptor-stack name="newStack">
+                <interceptor-ref name="printMsgInterceptor"/>
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+
+        </interceptors>
         <action name="Login">
             <result>pages/login.jsp</result>
         </action>
@@ -31,6 +41,11 @@
         <action name="customerAction"
                 class="com.atuts.struts.action.CustomerAction" >
             <result name="success">pages/success.jsp</result>
+        </action>
+        <action name="helloAction"
+                class="com.atuts.struts.action.HelloAction" >
+            <interceptor-ref name="newStack"/>
+            <result name="success">pages/hello.jsp</result>
         </action>
     </package>
 
