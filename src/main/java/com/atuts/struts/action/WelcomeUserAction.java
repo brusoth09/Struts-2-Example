@@ -13,6 +13,6 @@ public class WelcomeUserAction {
     }
 
     public String execute(){
-        return "SUCCESS";
+        return "ERROR";
     }
 }
